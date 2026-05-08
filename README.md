@@ -10,6 +10,9 @@ This is a **pnpm workspace monorepo** — one repository, many small projects.
 The root coordinates them; each pattern's Vue and React versions live
 as separate workspace packages.
 
+For a deeper walk-through of the workspace setup, see
+[`docs/architecture.md`](./docs/architecture.md).
+
 ```
 vue-vs-react-patterns/
 ├── package.json              ← root: orchestration scripts
