@@ -1,5 +1,5 @@
 {
-  "name": "vue",
+  "name": "01-reactivity-vue",
   "private": true,
   "version": "0.0.0",
   "type": "module",

@@ -1,0 +1,13 @@
+{
+  "name": "vue-vs-react-patterns",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Side-by-side comparison patterns for a Vue dev learning React.",
+  "scripts": {
+    "dev:01-reactivity": "pnpm --parallel --filter './patterns/01-reactivity/*' run dev"
+  },
+  "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": ">=22"
+  }
+}

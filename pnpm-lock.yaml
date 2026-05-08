@@ -6,7 +6,9 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  patterns/01-reactivity/vue:
     dependencies:
       vue:
         specifier: ^3.5.32
