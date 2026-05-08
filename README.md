@@ -4,11 +4,49 @@
 > thing that confused me — written down so it doesn't confuse
 > the next person.
 
-## How to use this repo
+## How it's organized
 
-Each pattern is a self-contained sandbox. Pick one, `cd` into the
-`vue/` or `react/` folder, run `pnpm install && pnpm dev`. The
-README in each pattern explains what to look at and why.
+This is a **pnpm workspace monorepo** — one repository, many small projects.
+The root coordinates them; each pattern's Vue and React versions live
+as separate workspace packages.
+
+```
+vue-vs-react-patterns/
+├── package.json              ← root: orchestration scripts
+├── pnpm-workspace.yaml       ← declares which folders are packages
+├── pnpm-lock.yaml            ← single lockfile for the whole repo
+└── patterns/
+    └── 01-reactivity/
+        ├── README.md         ← the learning artifact for this pattern
+        ├── vue/              ← package: 01-reactivity-vue
+        └── react/            ← package: 01-reactivity-react
+```
+
+## Getting started
+
+One install at the root covers every pattern:
+
+```bash
+pnpm install
+```
+
+Then run a pattern's Vue and React sides **side by side**:
+
+```bash
+pnpm dev:01-reactivity
+```
+
+That starts both dev servers in parallel:
+
+- React → http://localhost:5173
+- Vue   → http://localhost:5174
+
+To run just one side:
+
+```bash
+pnpm --filter 01-reactivity-vue dev
+pnpm --filter 01-reactivity-react dev
+```
 
 ## Patterns
 
@@ -23,9 +61,9 @@ README in each pattern explains what to look at and why.
 
 ## Stack
 
-Vite + TypeScript on both sides. No styling library, no state
-management — each pattern stays as small as possible to keep the
-contrast clean.
+Vite + TypeScript on both sides. pnpm workspace at the root. No styling
+library, no state management — each pattern stays as small as possible
+to keep the contrast clean.
 
 ## License
 
